@@ -3,7 +3,8 @@
 	"package": "com.notcharrow.tnttweaks.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"BlockMixin",
+		"ExplosionMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
