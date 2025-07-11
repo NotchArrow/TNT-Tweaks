@@ -25,7 +25,7 @@ public class BlockMixin {
 	private void init(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack, CallbackInfo ci) {
 		if (state.getBlock() == Blocks.TNT && ConfigManager.config.modEnabled) {
 			world.removeBlock(pos, false);
-			TntEntity tnt = EntityType.TNT.create(world);
+			TntEntity tnt = EntityType.TNT.create(world, SpawnReason.MOB_SUMMONED);
 			if (tnt != null) {
 				tnt.refreshPositionAfterTeleport(pos.getX(), pos.getY(), pos.getZ());
 				tnt.setFuse(ConfigManager.config.fuseTime);
