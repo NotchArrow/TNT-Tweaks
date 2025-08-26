@@ -23,7 +23,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class BlockMixin {
 	@Inject(at = @At("HEAD"), method = "onPlaced")
 	private void init(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack, CallbackInfo ci) {
-		if (state.getBlock() == Blocks.TNT && ConfigManager.config.modEnabled && ConfigManager.config.autoIgnite) {
+		if (state.getBlock() == Blocks.TNT && ConfigManager.config.modEnabled) {
 			world.removeBlock(pos, false);
 			TntEntity tnt = EntityType.TNT.create(world);
 			if (tnt != null) {
