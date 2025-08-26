@@ -17,7 +17,10 @@
 	"entrypoints": {
 		"main": [
 			"com.notcharrow.tnttweaks.TNTTweaks"
-		]
+		],
+        "modmenu": [
+            "com.notcharrow.tnttweaks.config.TNTTweaksModMenu"
+        ]
 	},
 	"mixins": [
 		"tnt-tweaks.mixins.json"
@@ -28,7 +31,8 @@
 		"java": ">=21",
 		"fabric-api": "*"
 	},
-	"suggests": {
-		"another-mod": "*"
-	}
+  "suggests": {
+    "cloth-config": "*",
+    "modmenu": "*"
+  }
 }
