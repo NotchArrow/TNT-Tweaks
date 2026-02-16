@@ -8,5 +8,7 @@ public class TNTTweaksConfig {
 	public boolean ignoreBlastResistance = true;
 	public boolean modifyKnockback = true;
 	public float knockbackModifier = 5.0f;
+	public boolean modifyDamage = false;
+	public float damageModifier = 20.0f;
 	public boolean placerImmunity = true;
 }

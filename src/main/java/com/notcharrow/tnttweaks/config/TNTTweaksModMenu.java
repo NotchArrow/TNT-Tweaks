@@ -46,9 +46,17 @@ public class TNTTweaksModMenu implements ModMenuApi {
 				ConfigManager.config.modifyKnockback,
 				value -> ConfigManager.config.modifyKnockback = value);
 
-		addFloatField(general, "Knockback Modifier Blocks", "Should TNT break blocks",
+		addFloatField(general, "Knockback Modifier Value", "Value for the Knockback Modifier",
 				ConfigManager.config.knockbackModifier,
 				value -> ConfigManager.config.knockbackModifier = value, 0.0f, 100.0f);
+
+		addBoolean(general, "Modify Damage", "Should TNT deal modified damage",
+				ConfigManager.config.modifyDamage,
+				value -> ConfigManager.config.modifyDamage = value);
+
+		addFloatField(general, "Damage Modifier Value", "Value for the Damage Modifier",
+				ConfigManager.config.damageModifier,
+				value -> ConfigManager.config.damageModifier = value, 0.0f, Float.MAX_VALUE);
 
 		addBoolean(general, "Placer Immunity", "Should the placer be given immunity from TNT damage",
 				ConfigManager.config.placerImmunity,

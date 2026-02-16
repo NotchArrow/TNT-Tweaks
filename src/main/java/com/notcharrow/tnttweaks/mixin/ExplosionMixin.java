@@ -40,4 +40,11 @@ public abstract class ExplosionMixin {
 			}
 		}
 	}
+
+	@Inject(at = @At("HEAD"), method = "calculateDamage", cancellable = true)
+	private void modifyDamage(Explosion explosion, Entity entity, float amount, CallbackInfoReturnable<Float> cir) {
+		if (ConfigManager.config.modEnabled && ConfigManager.config.modifyDamage) {
+			cir.setReturnValue(ConfigManager.config.damageModifier);
+		}
+	}
 }
